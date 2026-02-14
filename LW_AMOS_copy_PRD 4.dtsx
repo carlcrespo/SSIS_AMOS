@@ -1,0 +1,2213 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/31/2022 2:43:29 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="IICD00273"
+  DTS:CreatorName="IIC2\!ccrespo"
+  DTS:DTSID="{CAEDB42C-2B8B-4A07-948C-4A426C101A39}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LW_AMOS_copy_PRD 4"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{A1EDC905-4517-4F6F-AFBB-F9B041040805}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[A360-DB-01.LW_AMOS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6B25D6C8-AE3C-4856-BCEE-0536608F9540}"
+      DTS:ObjectName="A360-DB-01.LW_AMOS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=A360-DB-01;Initial Catalog=LW_AMOS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PRDLWDB02\LEASEWAVE.LW_Main]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C499B3EF-2A31-4859-A5B8-7CFB7CD42334}"
+      DTS:ObjectName="PRDLWDB02\LEASEWAVE.LW_Main">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PRDLWDB02\LEASEWAVE;Initial Catalog=LW_Main;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load tables"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{DDE02FCD-9D98-46C4-9CC5-50019D59F356}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load tables"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Load tables\des EmployeeAssignment_Entity"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="des EmployeeAssignment_Entity"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[EmployeeAssignment_Entity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load tables\des EmployeeAssignment_Entity.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[A360-DB-01.LW_AMOS]"
+                  connectionManagerRefId="Package.ConnectionManagers[A360-DB-01.LW_AMOS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[IsActive]"
+                      cachedDataType="ui1"
+                      cachedName="IsActive"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[IsActive]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[IsActive]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastModifiedDate"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[EmployeeAssignmentID]"
+                      cachedDataType="i8"
+                      cachedName="EmployeeAssignmentID"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[EmployeeAssignmentID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EmployeeAssignmentID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[EntityTypeID]"
+                      cachedDataType="ui1"
+                      cachedName="EntityTypeID"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[EntityTypeID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EntityTypeID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[EntityID]"
+                      cachedDataType="i4"
+                      cachedName="EntityID"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[EntityID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EntityID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[CustomerEmployeeAssignmentID]"
+                      cachedDataType="i8"
+                      cachedName="CustomerEmployeeAssignmentID"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[CustomerEmployeeAssignmentID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[CustomerEmployeeAssignmentID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[UserID]"
+                      cachedDataType="i4"
+                      cachedName="UserID"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[RoleFunctionID]"
+                      cachedDataType="ui1"
+                      cachedName="RoleFunctionID"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[RoleFunctionID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[RoleFunctionID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[IsRecourseAvailable]"
+                      cachedDataType="ui1"
+                      cachedName="IsRecourseAvailable"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[IsRecourseAvailable]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[IsRecourseAvailable]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[ActivationDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ActivationDate"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[ActivationDate]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[ActivationDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[DeactivationDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DeactivationDate"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[DeactivationDate]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[DeactivationDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].Columns[LastModifiedUserID]"
+                      cachedDataType="i4"
+                      cachedName="LastModifiedUserID"
+                      externalMetadataColumnId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[LastModifiedUserID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[LastModifiedUserID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[IsActive]"
+                      dataType="ui1"
+                      name="IsActive" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[EmployeeAssignmentID]"
+                      dataType="i8"
+                      name="EmployeeAssignmentID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[EntityTypeID]"
+                      dataType="ui1"
+                      name="EntityTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[EntityID]"
+                      dataType="i4"
+                      name="EntityID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[CustomerEmployeeAssignmentID]"
+                      dataType="i8"
+                      name="CustomerEmployeeAssignmentID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[RoleFunctionID]"
+                      dataType="ui1"
+                      name="RoleFunctionID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[IsRecourseAvailable]"
+                      dataType="ui1"
+                      name="IsRecourseAvailable" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[ActivationDate]"
+                      dataType="dbTimeStamp"
+                      name="ActivationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[DeactivationDate]"
+                      dataType="dbTimeStamp"
+                      name="DeactivationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input].ExternalColumns[LastModifiedUserID]"
+                      dataType="i4"
+                      name="LastModifiedUserID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load tables\des EmployeeAssignment_Entity.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\des EmployeeAssignment_Entity.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load tables\des EmployeeAssignment_Entity.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\des EmployeeAssignment_Entity.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load tables\des Security_UserProfile"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="des Security_UserProfile"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Security_UserProfile]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load tables\des Security_UserProfile.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[A360-DB-01.LW_AMOS]"
+                  connectionManagerRefId="Package.ConnectionManagers[A360-DB-01.LW_AMOS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsActive]"
+                      cachedDataType="ui1"
+                      cachedName="IsActive"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsActive]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsActive]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[LastModifiedUserID]"
+                      cachedDataType="i4"
+                      cachedName="LastModifiedUserID"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LastModifiedUserID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastModifiedUserID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastModifiedDate"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[UserID]"
+                      cachedDataType="i4"
+                      cachedName="UserID"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[SiteID]"
+                      cachedDataType="ui1"
+                      cachedName="SiteID"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[SiteID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[SiteID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[UserCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UserCode"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[UserCode]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserCode]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[UserAlias]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UserAlias"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[UserAlias]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserAlias]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[MiddleName]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="MiddleName"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[MiddleName]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[MiddleName]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[Suffix]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Suffix"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Suffix]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Suffix]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Phone]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[Extension]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Extension"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Extension]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Extension]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[Fax]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Fax"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Fax]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Fax]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[EMail]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="EMail"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[EMail]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[EMail]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[HireDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="HireDate"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[HireDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[HireDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[UserSourceID]"
+                      cachedDataType="i8"
+                      cachedName="UserSourceID"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[UserSourceID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserSourceID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[LoginName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="LoginName"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LoginName]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginName]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[LoginEffectiveFromDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoginEffectiveFromDate"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LoginEffectiveFromDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginEffectiveFromDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[LoginExpiryDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoginExpiryDate"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LoginExpiryDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginExpiryDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[Password]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="Password"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Password]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Password]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[PasswordEffectiveFromDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PasswordEffectiveFromDate"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[PasswordEffectiveFromDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PasswordEffectiveFromDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[PasswordExpiryDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PasswordExpiryDate"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[PasswordExpiryDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PasswordExpiryDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsLoginBlocked]"
+                      cachedDataType="ui1"
+                      cachedName="IsLoginBlocked"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsLoginBlocked]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsLoginBlocked]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsPasswordToBeReset]"
+                      cachedDataType="ui1"
+                      cachedName="IsPasswordToBeReset"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsPasswordToBeReset]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsPasswordToBeReset]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsPreset]"
+                      cachedDataType="ui1"
+                      cachedName="IsPreset"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsPreset]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsPreset]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsWindowsAuthenticationRequired]"
+                      cachedDataType="ui1"
+                      cachedName="IsWindowsAuthenticationRequired"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsWindowsAuthenticationRequired]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsWindowsAuthenticationRequired]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsNotifyByEmailAllowed]"
+                      cachedDataType="ui1"
+                      cachedName="IsNotifyByEmailAllowed"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsNotifyByEmailAllowed]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsNotifyByEmailAllowed]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[ActivationDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ActivationDate"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[ActivationDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[ActivationDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[DeactivationDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DeactivationDate"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[DeactivationDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DeactivationDate]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsAllowedToExtendLock]"
+                      cachedDataType="ui1"
+                      cachedName="IsAllowedToExtendLock"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsAllowedToExtendLock]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsAllowedToExtendLock]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[DefaultAppSubsystemID]"
+                      cachedDataType="ui1"
+                      cachedName="DefaultAppSubsystemID"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[DefaultAppSubsystemID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DefaultAppSubsystemID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[Prefix]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Prefix"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Prefix]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Prefix]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[PayRollNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="PayRollNumber"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[PayRollNumber]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PayRollNumber]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsTimeKeepingAdmin]"
+                      cachedDataType="ui1"
+                      cachedName="IsTimeKeepingAdmin"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsTimeKeepingAdmin]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsTimeKeepingAdmin]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[DepartmentID]"
+                      cachedDataType="ui1"
+                      cachedName="DepartmentID"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[DepartmentID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DepartmentID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[CountryID]"
+                      cachedDataType="ui1"
+                      cachedName="CountryID"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[CountryID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[CountryID]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[ExternalAlias]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ExternalAlias"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[ExternalAlias]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[ExternalAlias]" />
+                    <inputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].Columns[IsNamedUser]"
+                      cachedDataType="ui1"
+                      cachedName="IsNamedUser"
+                      externalMetadataColumnId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsNamedUser]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsNamedUser]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsActive]"
+                      dataType="ui1"
+                      name="IsActive" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LastModifiedUserID]"
+                      dataType="i4"
+                      name="LastModifiedUserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[SiteID]"
+                      dataType="ui1"
+                      name="SiteID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[UserCode]"
+                      dataType="wstr"
+                      length="50"
+                      name="UserCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[UserAlias]"
+                      dataType="wstr"
+                      length="50"
+                      name="UserAlias" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="50"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="100"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="100"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="100"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Suffix]"
+                      dataType="wstr"
+                      length="20"
+                      name="Suffix" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="100"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Extension]"
+                      dataType="wstr"
+                      length="100"
+                      name="Extension" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Fax]"
+                      dataType="wstr"
+                      length="100"
+                      name="Fax" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[EMail]"
+                      dataType="wstr"
+                      length="100"
+                      name="EMail" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[HireDate]"
+                      dataType="dbTimeStamp"
+                      name="HireDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[UserSourceID]"
+                      dataType="i8"
+                      name="UserSourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LoginName]"
+                      dataType="wstr"
+                      length="40"
+                      name="LoginName" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LoginEffectiveFromDate]"
+                      dataType="dbTimeStamp"
+                      name="LoginEffectiveFromDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[LoginExpiryDate]"
+                      dataType="dbTimeStamp"
+                      name="LoginExpiryDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Password]"
+                      dataType="wstr"
+                      length="60"
+                      name="Password" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[PasswordEffectiveFromDate]"
+                      dataType="dbTimeStamp"
+                      name="PasswordEffectiveFromDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[PasswordExpiryDate]"
+                      dataType="dbTimeStamp"
+                      name="PasswordExpiryDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsLoginBlocked]"
+                      dataType="ui1"
+                      name="IsLoginBlocked" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsPasswordToBeReset]"
+                      dataType="ui1"
+                      name="IsPasswordToBeReset" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsPreset]"
+                      dataType="ui1"
+                      name="IsPreset" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsWindowsAuthenticationRequired]"
+                      dataType="ui1"
+                      name="IsWindowsAuthenticationRequired" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsNotifyByEmailAllowed]"
+                      dataType="ui1"
+                      name="IsNotifyByEmailAllowed" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[ActivationDate]"
+                      dataType="dbTimeStamp"
+                      name="ActivationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[DeactivationDate]"
+                      dataType="dbTimeStamp"
+                      name="DeactivationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsAllowedToExtendLock]"
+                      dataType="ui1"
+                      name="IsAllowedToExtendLock" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[DefaultAppSubsystemID]"
+                      dataType="ui1"
+                      name="DefaultAppSubsystemID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[Prefix]"
+                      dataType="wstr"
+                      length="20"
+                      name="Prefix" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[PayRollNumber]"
+                      dataType="wstr"
+                      length="20"
+                      name="PayRollNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsTimeKeepingAdmin]"
+                      dataType="ui1"
+                      name="IsTimeKeepingAdmin" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[DepartmentID]"
+                      dataType="ui1"
+                      name="DepartmentID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[CountryID]"
+                      dataType="ui1"
+                      name="CountryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[ExternalAlias]"
+                      dataType="wstr"
+                      length="50"
+                      name="ExternalAlias" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input].ExternalColumns[IsNamedUser]"
+                      dataType="ui1"
+                      name="IsNamedUser" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load tables\des Security_UserProfile.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\des Security_UserProfile.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load tables\des Security_UserProfile.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\des Security_UserProfile.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load tables\src EmployeeAssignment_Entity"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="src EmployeeAssignment_Entity"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[EmployeeAssignment_Entity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load tables\src EmployeeAssignment_Entity.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PRDLWDB02\LEASEWAVE.LW_Main]"
+                  connectionManagerRefId="Package.ConnectionManagers[PRDLWDB02\LEASEWAVE.LW_Main]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[IsActive]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[IsActive]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[IsActive]"
+                      name="IsActive"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EmployeeAssignmentID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[EmployeeAssignmentID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EmployeeAssignmentID]"
+                      name="EmployeeAssignmentID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EntityTypeID]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[EntityTypeID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EntityTypeID]"
+                      name="EntityTypeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EntityID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[EntityID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[EntityID]"
+                      name="EntityID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[CustomerEmployeeAssignmentID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[CustomerEmployeeAssignmentID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[CustomerEmployeeAssignmentID]"
+                      name="CustomerEmployeeAssignmentID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[UserID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[UserID]"
+                      name="UserID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[RoleFunctionID]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[RoleFunctionID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[RoleFunctionID]"
+                      name="RoleFunctionID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[IsRecourseAvailable]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[IsRecourseAvailable]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[IsRecourseAvailable]"
+                      name="IsRecourseAvailable"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[ActivationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[ActivationDate]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[ActivationDate]"
+                      name="ActivationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[DeactivationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[DeactivationDate]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[DeactivationDate]"
+                      name="DeactivationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[LastModifiedUserID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[LastModifiedUserID]"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].Columns[LastModifiedUserID]"
+                      name="LastModifiedUserID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[IsActive]"
+                      dataType="ui1"
+                      name="IsActive" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[EmployeeAssignmentID]"
+                      dataType="i8"
+                      name="EmployeeAssignmentID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[EntityTypeID]"
+                      dataType="ui1"
+                      name="EntityTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[EntityID]"
+                      dataType="i4"
+                      name="EntityID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[CustomerEmployeeAssignmentID]"
+                      dataType="i8"
+                      name="CustomerEmployeeAssignmentID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[RoleFunctionID]"
+                      dataType="ui1"
+                      name="RoleFunctionID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[IsRecourseAvailable]"
+                      dataType="ui1"
+                      name="IsRecourseAvailable" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[ActivationDate]"
+                      dataType="dbTimeStamp"
+                      name="ActivationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[DeactivationDate]"
+                      dataType="dbTimeStamp"
+                      name="DeactivationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output].ExternalColumns[LastModifiedUserID]"
+                      dataType="i4"
+                      name="LastModifiedUserID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[EmployeeAssignmentID]"
+                      dataType="i8"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[EmployeeAssignmentID]"
+                      name="EmployeeAssignmentID" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[EntityTypeID]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[EntityTypeID]"
+                      name="EntityTypeID" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[EntityID]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[EntityID]"
+                      name="EntityID" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[CustomerEmployeeAssignmentID]"
+                      dataType="i8"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[CustomerEmployeeAssignmentID]"
+                      name="CustomerEmployeeAssignmentID" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      name="UserID" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[RoleFunctionID]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[RoleFunctionID]"
+                      name="RoleFunctionID" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[IsRecourseAvailable]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[IsRecourseAvailable]"
+                      name="IsRecourseAvailable" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[IsActive]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[IsActive]"
+                      name="IsActive" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[ActivationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[ActivationDate]"
+                      name="ActivationDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[DeactivationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[DeactivationDate]"
+                      name="DeactivationDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[LastModifiedUserID]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[LastModifiedUserID]"
+                      name="LastModifiedUserID" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load tables\src Security_UserProfile"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="src Security_UserProfile"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Security_UserProfile]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load tables\src Security_UserProfile.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PRDLWDB02\LEASEWAVE.LW_Main]"
+                  connectionManagerRefId="Package.ConnectionManagers[PRDLWDB02\LEASEWAVE.LW_Main]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsActive]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsActive]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsActive]"
+                      name="IsActive"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastModifiedUserID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LastModifiedUserID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastModifiedUserID]"
+                      name="LastModifiedUserID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserID]"
+                      name="UserID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[SiteID]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[SiteID]"
+                      name="SiteID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[UserCode]"
+                      length="50"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserCode]"
+                      name="UserCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserAlias]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[UserAlias]"
+                      length="50"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserAlias]"
+                      name="UserAlias"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      length="50"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      name="MiddleName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Suffix]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
+                      length="20"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Suffix]"
+                      name="Suffix"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Extension]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Extension]"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Extension]"
+                      name="Extension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Fax]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Fax]"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Fax]"
+                      name="Fax"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[EMail]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[EMail]"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[EMail]"
+                      name="EMail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[HireDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[HireDate]"
+                      name="HireDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserSourceID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[UserSourceID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[UserSourceID]"
+                      name="UserSourceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LoginName]"
+                      length="40"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginName]"
+                      name="LoginName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginEffectiveFromDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LoginEffectiveFromDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginEffectiveFromDate]"
+                      name="LoginEffectiveFromDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginExpiryDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LoginExpiryDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[LoginExpiryDate]"
+                      name="LoginExpiryDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Password]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Password]"
+                      length="60"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Password]"
+                      name="Password"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PasswordEffectiveFromDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[PasswordEffectiveFromDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PasswordEffectiveFromDate]"
+                      name="PasswordEffectiveFromDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PasswordExpiryDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[PasswordExpiryDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PasswordExpiryDate]"
+                      name="PasswordExpiryDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsLoginBlocked]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsLoginBlocked]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsLoginBlocked]"
+                      name="IsLoginBlocked"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsPasswordToBeReset]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsPasswordToBeReset]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsPasswordToBeReset]"
+                      name="IsPasswordToBeReset"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsPreset]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsPreset]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsPreset]"
+                      name="IsPreset"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsWindowsAuthenticationRequired]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsWindowsAuthenticationRequired]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsWindowsAuthenticationRequired]"
+                      name="IsWindowsAuthenticationRequired"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsNotifyByEmailAllowed]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsNotifyByEmailAllowed]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsNotifyByEmailAllowed]"
+                      name="IsNotifyByEmailAllowed"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[ActivationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[ActivationDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[ActivationDate]"
+                      name="ActivationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DeactivationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[DeactivationDate]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DeactivationDate]"
+                      name="DeactivationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsAllowedToExtendLock]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsAllowedToExtendLock]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsAllowedToExtendLock]"
+                      name="IsAllowedToExtendLock"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DefaultAppSubsystemID]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[DefaultAppSubsystemID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DefaultAppSubsystemID]"
+                      name="DefaultAppSubsystemID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Prefix]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Prefix]"
+                      length="20"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[Prefix]"
+                      name="Prefix"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PayRollNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[PayRollNumber]"
+                      length="20"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[PayRollNumber]"
+                      name="PayRollNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsTimeKeepingAdmin]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsTimeKeepingAdmin]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsTimeKeepingAdmin]"
+                      name="IsTimeKeepingAdmin"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DepartmentID]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[DepartmentID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[DepartmentID]"
+                      name="DepartmentID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[CountryID]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[CountryID]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[CountryID]"
+                      name="CountryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[ExternalAlias]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[ExternalAlias]"
+                      length="50"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[ExternalAlias]"
+                      name="ExternalAlias"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsNamedUser]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsNamedUser]"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].Columns[IsNamedUser]"
+                      name="IsNamedUser"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsActive]"
+                      dataType="ui1"
+                      name="IsActive" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LastModifiedUserID]"
+                      dataType="i4"
+                      name="LastModifiedUserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                      dataType="ui1"
+                      name="SiteID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[UserCode]"
+                      dataType="wstr"
+                      length="50"
+                      name="UserCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[UserAlias]"
+                      dataType="wstr"
+                      length="50"
+                      name="UserAlias" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="50"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="100"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="100"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="100"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
+                      dataType="wstr"
+                      length="20"
+                      name="Suffix" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="100"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Extension]"
+                      dataType="wstr"
+                      length="100"
+                      name="Extension" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Fax]"
+                      dataType="wstr"
+                      length="100"
+                      name="Fax" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[EMail]"
+                      dataType="wstr"
+                      length="100"
+                      name="EMail" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                      dataType="dbTimeStamp"
+                      name="HireDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[UserSourceID]"
+                      dataType="i8"
+                      name="UserSourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LoginName]"
+                      dataType="wstr"
+                      length="40"
+                      name="LoginName" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LoginEffectiveFromDate]"
+                      dataType="dbTimeStamp"
+                      name="LoginEffectiveFromDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[LoginExpiryDate]"
+                      dataType="dbTimeStamp"
+                      name="LoginExpiryDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Password]"
+                      dataType="wstr"
+                      length="60"
+                      name="Password" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[PasswordEffectiveFromDate]"
+                      dataType="dbTimeStamp"
+                      name="PasswordEffectiveFromDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[PasswordExpiryDate]"
+                      dataType="dbTimeStamp"
+                      name="PasswordExpiryDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsLoginBlocked]"
+                      dataType="ui1"
+                      name="IsLoginBlocked" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsPasswordToBeReset]"
+                      dataType="ui1"
+                      name="IsPasswordToBeReset" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsPreset]"
+                      dataType="ui1"
+                      name="IsPreset" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsWindowsAuthenticationRequired]"
+                      dataType="ui1"
+                      name="IsWindowsAuthenticationRequired" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsNotifyByEmailAllowed]"
+                      dataType="ui1"
+                      name="IsNotifyByEmailAllowed" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[ActivationDate]"
+                      dataType="dbTimeStamp"
+                      name="ActivationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[DeactivationDate]"
+                      dataType="dbTimeStamp"
+                      name="DeactivationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsAllowedToExtendLock]"
+                      dataType="ui1"
+                      name="IsAllowedToExtendLock" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[DefaultAppSubsystemID]"
+                      dataType="ui1"
+                      name="DefaultAppSubsystemID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[Prefix]"
+                      dataType="wstr"
+                      length="20"
+                      name="Prefix" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[PayRollNumber]"
+                      dataType="wstr"
+                      length="20"
+                      name="PayRollNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsTimeKeepingAdmin]"
+                      dataType="ui1"
+                      name="IsTimeKeepingAdmin" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[DepartmentID]"
+                      dataType="ui1"
+                      name="DepartmentID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[CountryID]"
+                      dataType="ui1"
+                      name="CountryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[ExternalAlias]"
+                      dataType="wstr"
+                      length="50"
+                      name="ExternalAlias" />
+                    <externalMetadataColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output].ExternalColumns[IsNamedUser]"
+                      dataType="ui1"
+                      name="IsNamedUser" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      name="UserID" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[SiteID]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[SiteID]"
+                      name="SiteID" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[UserCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[UserCode]"
+                      name="UserCode" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[UserAlias]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[UserAlias]"
+                      name="UserAlias" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                      name="MiddleName" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Suffix]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Suffix]"
+                      name="Suffix" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Extension]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Extension]"
+                      name="Extension" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Fax]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Fax]"
+                      name="Fax" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[EMail]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[EMail]"
+                      name="EMail" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                      name="HireDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[UserSourceID]"
+                      dataType="i8"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[UserSourceID]"
+                      name="UserSourceID" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LoginName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LoginName]"
+                      name="LoginName" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LoginEffectiveFromDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LoginEffectiveFromDate]"
+                      name="LoginEffectiveFromDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LoginExpiryDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LoginExpiryDate]"
+                      name="LoginExpiryDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Password]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Password]"
+                      name="Password" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[PasswordEffectiveFromDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[PasswordEffectiveFromDate]"
+                      name="PasswordEffectiveFromDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[PasswordExpiryDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[PasswordExpiryDate]"
+                      name="PasswordExpiryDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsLoginBlocked]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsLoginBlocked]"
+                      name="IsLoginBlocked" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsPasswordToBeReset]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsPasswordToBeReset]"
+                      name="IsPasswordToBeReset" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsPreset]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsPreset]"
+                      name="IsPreset" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsWindowsAuthenticationRequired]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsWindowsAuthenticationRequired]"
+                      name="IsWindowsAuthenticationRequired" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsNotifyByEmailAllowed]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsNotifyByEmailAllowed]"
+                      name="IsNotifyByEmailAllowed" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsActive]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsActive]"
+                      name="IsActive" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[ActivationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[ActivationDate]"
+                      name="ActivationDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[DeactivationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[DeactivationDate]"
+                      name="DeactivationDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LastModifiedUserID]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LastModifiedUserID]"
+                      name="LastModifiedUserID" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsAllowedToExtendLock]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsAllowedToExtendLock]"
+                      name="IsAllowedToExtendLock" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[DefaultAppSubsystemID]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[DefaultAppSubsystemID]"
+                      name="DefaultAppSubsystemID" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Prefix]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[Prefix]"
+                      name="Prefix" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[PayRollNumber]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[PayRollNumber]"
+                      name="PayRollNumber" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsTimeKeepingAdmin]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsTimeKeepingAdmin]"
+                      name="IsTimeKeepingAdmin" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[DepartmentID]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[DepartmentID]"
+                      name="DepartmentID" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[CountryID]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[CountryID]"
+                      name="CountryID" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[ExternalAlias]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[ExternalAlias]"
+                      name="ExternalAlias" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsNamedUser]"
+                      dataType="ui1"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[IsNamedUser]"
+                      name="IsNamedUser" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load tables.Paths[OLE DB Source Output]"
+              endId="Package\Load tables\des Security_UserProfile.Inputs[Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load tables\src Security_UserProfile.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load tables.Paths[OLE DB Source Output1]"
+              endId="Package\Load tables\des EmployeeAssignment_Entity.Inputs[Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load tables\src EmployeeAssignment_Entity.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{4EA2B073-B184-4C42-A255-AEFFA70F893C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6B25D6C8-AE3C-4856-BCEE-0536608F9540}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.EmployeeAssignment_Entity&#xA;GO&#xA;TRUNCATE TABLE dbo.[Security_UserProfile]&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{D1E16B2F-0F59-4A60-9F14-ADE8A09C1980\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{75E4149B-2508-4607-B16B-9FE3C2DCCEF1}"
+      DTS:From="Package\Truncate tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{D1E16B2F-0F59-4A60-9F14-ADE8A09C1980}"
+      DTS:To="Package\Load tables" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Load tables"
+          TopLeft="109,132" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Truncate tables"
+          TopLeft="94,30" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{D1E16B2F-0F59-4A60-9F14-ADE8A09C1980\}]"
+          TopLeft="189,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Load tables\src EmployeeAssignment_Entity"
+          TopLeft="16,5.49999999999989" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Load tables\des EmployeeAssignment_Entity"
+          TopLeft="5.5,107.5" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Load tables\des Security_UserProfile"
+          TopLeft="375,107.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Load tables\src Security_UserProfile"
+          TopLeft="385.5,5.49999999999989" />
+        <EdgeLayout
+          Id="Package\Load tables.Paths[OLE DB Source Output1]"
+          TopLeft="130,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,60.0000000000001"
+              Start="0,0"
+              End="-9,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="-4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-5,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,30.0000000000001"
+                    Point2="-9,30.0000000000001"
+                    Point3="-9,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-9,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load tables.Paths[OLE DB Source Output]"
+          TopLeft="480.5,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,60.0000000000001"
+              Start="0,0"
+              End="-9,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="-4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-5,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,30.0000000000001"
+                    Point2="-9,30.0000000000001"
+                    Point3="-9,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-9,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load tables\src EmployeeAssignment_Entity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load tables\des EmployeeAssignment_Entity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load tables\des Security_UserProfile">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load tables\src Security_UserProfile">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
