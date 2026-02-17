@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="src_LWDW"
+  DTS:DTSID="{19B42584-75B0-4C6C-8A0E-17FFD94E7693}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=CORPSMDB16\SGR;Initial Catalog=LWDW;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

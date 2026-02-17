@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="des_LW_AMOS"
+  DTS:DTSID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=A360-DB-01;Initial Catalog=LW_AMOS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=false;Application Name=SSIS-LW_AMOS_copy_PRD 0-{C25AF581-2EC6-4949-A2CE-B3F8357073D6}DestinationConnectionOLEDB;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

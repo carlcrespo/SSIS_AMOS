@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/9/2020 8:06:25 AM"
@@ -12,36 +12,10 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="LW_AMOS_copy_PRD 0"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{A8CB92AF-232F-452A-8275-FC05085044B9}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{B1EC1349-6264-4E7E-9AED-5C7FA255742D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}"
-      DTS:ObjectName="DestinationConnectionOLEDB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=A360-DB-01;Initial Catalog=LW_AMOS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=false;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}"
-      DTS:ObjectName="SourceConnectionOLEDB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PRDLWDB02\LEASEWAVE;Initial Catalog=LW_Main;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=false;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -117,8 +91,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables\des_Lease_Contract.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -628,8 +602,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables\des_Lease_ContractStructure_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -793,8 +767,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables\des_Lease_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2096,8 +2070,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables\src_Lease_Contract.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2904,8 +2878,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables\src_Lease_ContractStructure_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3100,8 +3074,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables\src_Lease_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5424,8 +5398,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\des_Jark_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5637,8 +5611,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\des_LeaseTransaction_AdminstrativeInformation.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6224,8 +6198,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\des_LeaseTransaction_PaymentCalculation.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6969,8 +6943,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\des_LeaseTransaction_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7650,8 +7624,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\des_Lease_Status_CnfgLocale.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7791,8 +7765,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\des_Payoff_FinancialDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -8934,8 +8908,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\des_Payoff_Quote.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -9255,8 +9229,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\des_WorkFlow_PathHeader.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -9422,8 +9396,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\src_Jark_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -9708,8 +9682,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\src_LeaseTransaction_AdminstrativeInformation.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -10660,8 +10634,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\src_LeaseTransaction_PaymentCalculation.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -11975,8 +11949,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\src_LeaseTransaction_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -13128,8 +13102,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\src_Lease_Status_CnfgLocale.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -13282,8 +13256,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\src_Payoff_FinancialDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -15194,8 +15168,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\src_Payoff_Quote.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -15672,8 +15646,8 @@
               <connections>
                 <connection
                   refId="Package\Copy PROD tables2\src_WorkFlow_PathHeader.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -15957,8 +15931,8 @@
               <connections>
                 <connection
                   refId="Package\Customer Profile\des_Customer_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -16976,8 +16950,8 @@
               <connections>
                 <connection
                   refId="Package\Customer Profile\src_Customer_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -18764,8 +18738,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Destination - Inventory_CategoryTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -18919,8 +18893,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Destination 1 - Inventory_FormTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -19106,8 +19080,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Destination 2 - Inventory_Location.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -19279,8 +19253,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Destination 3 - Inventory_LocationTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -19664,8 +19638,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Destination 4 - Inventory_ManufacturerTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -19823,8 +19797,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Source - Inventory_CategoryTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -20004,8 +19978,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Source 1 - Inventory_FormTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -20242,8 +20216,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Source 2 - Inventory_Location.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -20456,8 +20430,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Source 3 - Inventory_LocationTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -21045,8 +21019,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 1\Source 4 - Inventory_ManufacturerTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -21302,8 +21276,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Destination 5 - Inventory_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -23029,8 +23003,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Destination 6 - Inventory_Sale.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -23486,8 +23460,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Destination 7 - Inventory_Status_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -23681,8 +23655,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Destination 8 - Inventory_SubcategoryTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -23846,8 +23820,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Destination 9 - InventorySale_TradeOutDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -24009,8 +23983,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Source 5 - Inventory_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -26968,8 +26942,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Source 6 - Inventory_Sale.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -27683,8 +27657,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Source 7 - Inventory_Status_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -27933,8 +27907,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Source 8 - Inventory_SubcategoryTemplate.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -28132,8 +28106,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 2\Source 9 - InventorySale_TradeOutDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -28395,8 +28369,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Destination 10 - Invoice_BatchHeader.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -28580,8 +28554,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Destination 11 - Invoice_DealDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -28771,8 +28745,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Destination 12 - Invoice_Header.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -29140,8 +29114,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Destination 13 - Invoice_Number.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -29341,8 +29315,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Destination 14 - Invoice_ReceivableDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -29668,8 +29642,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Source 10 - Invoice_BatchHeader.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -29903,8 +29877,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Source 11 - Invoice_DealDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -30147,8 +30121,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Source 12 - Invoice_Header.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -30709,8 +30683,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Source 13 - Invoice_Number.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -30971,8 +30945,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 3\Source 14 - Invoice_ReceivableDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -31522,8 +31496,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Destination 15 - Invoice_Status_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -31687,8 +31661,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Destination 16 - Invoice_Type_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -31862,8 +31836,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Destination 17 - InvoiceGroup_CustomerReference_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -32019,8 +31993,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Destination 18 - InvoiceGroup_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -32490,8 +32464,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Destination 19 - Lease_InventoryInLease.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -33443,8 +33417,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Source 15 - Invoice_Status_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -33639,8 +33613,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Source 16 - Invoice_Type_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -33853,8 +33827,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Source 17 - InvoiceGroup_CustomerReference_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -34037,8 +34011,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Source 18 - InvoiceGroup_Profile.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -34785,8 +34759,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 4\Source 19 - Lease_InventoryInLease.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -36422,8 +36396,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Destination 20 - Lease_Status_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -36587,8 +36561,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Destination 21 - Payoff_FinancialDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -37730,8 +37704,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Destination 22 - Payoff_InventoryInQuote.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -38031,8 +38005,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Destination 23 - PayOff_InventoryStatus_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -38196,8 +38170,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Destination 24 - Payoff_QuoteInvoiceHeader.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -38461,8 +38435,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Source 20 - Lease_Status_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -38657,8 +38631,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Source 21 - Payoff_FinancialDetail.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -40569,8 +40543,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Source 22 - Payoff_InventoryInQuote.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -41005,8 +40979,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Source 23 - PayOff_InventoryStatus_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -41201,8 +41175,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 5\Source 24 - Payoff_QuoteInvoiceHeader.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -41647,8 +41621,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 6\Destination 25 - PayOff_QuoteStatus_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -41862,8 +41836,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 6\Destination 26 - Template_State_CnfgLocale.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="{C25AF581-2EC6-4949-A2CE-B3F8357073D6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -42005,8 +41979,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 6\Source 25 - PayOff_QuoteStatus_Cnfg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -42291,8 +42265,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task 6\Source 26 - Template_State_CnfgLocale.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="{7C2D1308-7D12-4542-AD96-A0DEA30BF9BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SourceConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -42611,31 +42585,7 @@
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Truncate PROD tables2" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{3D1C8C00-7957-4D22-A1F5-A152C7B7F7FF\}]"
-      DTS:CreationName=""
-      DTS:DTSID="{68A3622E-AB0A-44F1-A060-B268597CB1CC}"
-      DTS:From="Package\Preparation SQL Task 5"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="{68A3622E-AB0A-44F1-A060-B268597CB1CC}"
-      DTS:To="Package\Data Flow Task 5" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{5CF49F78-E0FF-4BA2-BED7-107DEDD7213C\}]"
-      DTS:CreationName=""
-      DTS:DTSID="{A5761320-A38D-4657-B632-287E8D7A47FF}"
-      DTS:From="Package\Preparation SQL Task 1"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="{A5761320-A38D-4657-B632-287E8D7A47FF}"
-      DTS:To="Package\Data Flow Task 1" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{60DB5C0D-7912-4F40-A985-AFD0B44ABD27\}]"
-      DTS:CreationName=""
-      DTS:DTSID="{56C597D6-BCD2-4872-8441-1E126452ED94}"
-      DTS:From="Package\Preparation SQL Task 4"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="{56C597D6-BCD2-4872-8441-1E126452ED94}"
-      DTS:To="Package\Data Flow Task 4" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{A2DC1503-6682-43F3-9A4E-C946575D666F\}]"
+      DTS:refId="Package.PrecedenceConstraints[{18C49BBE-5E65-4775-8F9C-D1184C661BAF\}]"
       DTS:CreationName=""
       DTS:DTSID="{18C49BBE-5E65-4775-8F9C-D1184C661BAF}"
       DTS:From="Package\Data Flow Task 5"
@@ -42643,23 +42593,7 @@
       DTS:ObjectName="{18C49BBE-5E65-4775-8F9C-D1184C661BAF}"
       DTS:To="Package\Preparation SQL Task 6" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{AA90B0F6-9271-4905-BA76-6F6DE3960D8A\}]"
-      DTS:CreationName=""
-      DTS:DTSID="{E0922252-7349-420A-9B36-ED5AA88E8EA8}"
-      DTS:From="Package\Data Flow Task 3"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="{E0922252-7349-420A-9B36-ED5AA88E8EA8}"
-      DTS:To="Package\Preparation SQL Task 4" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{AEBDAC17-9B15-4435-A141-9690C42DE54B\}]"
-      DTS:CreationName=""
-      DTS:DTSID="{62756EAE-6984-42EA-B528-8BCD6E15A81B}"
-      DTS:From="Package\Preparation SQL Task 3"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="{62756EAE-6984-42EA-B528-8BCD6E15A81B}"
-      DTS:To="Package\Data Flow Task 3" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{C226F970-31BE-4401-9E6F-05E7BA608C90\}]"
+      DTS:refId="Package.PrecedenceConstraints[{525441ED-3936-4974-8FAA-EB5695B58CAA\}]"
       DTS:CreationName=""
       DTS:DTSID="{525441ED-3936-4974-8FAA-EB5695B58CAA}"
       DTS:From="Package\Preparation SQL Task 2"
@@ -42667,15 +42601,7 @@
       DTS:ObjectName="{525441ED-3936-4974-8FAA-EB5695B58CAA}"
       DTS:To="Package\Data Flow Task 2" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{D162AB8D-1FAA-4727-9059-DBF44C44646E\}]"
-      DTS:CreationName=""
-      DTS:DTSID="{DBFE87BE-185A-4111-8F78-7E07AF013B69}"
-      DTS:From="Package\Data Flow Task 2"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="{DBFE87BE-185A-4111-8F78-7E07AF013B69}"
-      DTS:To="Package\Preparation SQL Task 3" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{E0E1C404-A9B8-4DF6-9E20-9199DE49552E\}]"
+      DTS:refId="Package.PrecedenceConstraints[{52B99CC5-2C0E-4E3C-8FD3-EBA307171E2E\}]"
       DTS:CreationName=""
       DTS:DTSID="{52B99CC5-2C0E-4E3C-8FD3-EBA307171E2E}"
       DTS:From="Package\Data Flow Task 1"
@@ -42683,7 +42609,39 @@
       DTS:ObjectName="{52B99CC5-2C0E-4E3C-8FD3-EBA307171E2E}"
       DTS:To="Package\Preparation SQL Task 2" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{E264CABF-4DC3-4219-9F05-CB75FE641320\}]"
+      DTS:refId="Package.PrecedenceConstraints[{56C597D6-BCD2-4872-8441-1E126452ED94\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{56C597D6-BCD2-4872-8441-1E126452ED94}"
+      DTS:From="Package\Preparation SQL Task 4"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{56C597D6-BCD2-4872-8441-1E126452ED94}"
+      DTS:To="Package\Data Flow Task 4" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{62756EAE-6984-42EA-B528-8BCD6E15A81B\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{62756EAE-6984-42EA-B528-8BCD6E15A81B}"
+      DTS:From="Package\Preparation SQL Task 3"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{62756EAE-6984-42EA-B528-8BCD6E15A81B}"
+      DTS:To="Package\Data Flow Task 3" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{68A3622E-AB0A-44F1-A060-B268597CB1CC\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{68A3622E-AB0A-44F1-A060-B268597CB1CC}"
+      DTS:From="Package\Preparation SQL Task 5"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{68A3622E-AB0A-44F1-A060-B268597CB1CC}"
+      DTS:To="Package\Data Flow Task 5" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{911CDF21-43DC-4013-9FDC-3A1579A105D7\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{911CDF21-43DC-4013-9FDC-3A1579A105D7}"
+      DTS:From="Package\Preparation SQL Task 6"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{911CDF21-43DC-4013-9FDC-3A1579A105D7}"
+      DTS:To="Package\Data Flow Task 6" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{950DB5F7-289A-4A01-88C7-BFF4902B48E7\}]"
       DTS:CreationName=""
       DTS:DTSID="{950DB5F7-289A-4A01-88C7-BFF4902B48E7}"
       DTS:From="Package\Data Flow Task 4"
@@ -42691,13 +42649,29 @@
       DTS:ObjectName="{950DB5F7-289A-4A01-88C7-BFF4902B48E7}"
       DTS:To="Package\Preparation SQL Task 5" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{FE9CE034-5219-4EBA-9559-45A52C00C622\}]"
+      DTS:refId="Package.PrecedenceConstraints[{A5761320-A38D-4657-B632-287E8D7A47FF\}]"
       DTS:CreationName=""
-      DTS:DTSID="{911CDF21-43DC-4013-9FDC-3A1579A105D7}"
-      DTS:From="Package\Preparation SQL Task 6"
+      DTS:DTSID="{A5761320-A38D-4657-B632-287E8D7A47FF}"
+      DTS:From="Package\Preparation SQL Task 1"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="{911CDF21-43DC-4013-9FDC-3A1579A105D7}"
-      DTS:To="Package\Data Flow Task 6" />
+      DTS:ObjectName="{A5761320-A38D-4657-B632-287E8D7A47FF}"
+      DTS:To="Package\Data Flow Task 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{DBFE87BE-185A-4111-8F78-7E07AF013B69\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{DBFE87BE-185A-4111-8F78-7E07AF013B69}"
+      DTS:From="Package\Data Flow Task 2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{DBFE87BE-185A-4111-8F78-7E07AF013B69}"
+      DTS:To="Package\Preparation SQL Task 3" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{E0922252-7349-420A-9B36-ED5AA88E8EA8\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{E0922252-7349-420A-9B36-ED5AA88E8EA8}"
+      DTS:From="Package\Data Flow Task 3"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{E0922252-7349-420A-9B36-ED5AA88E8EA8}"
+      DTS:To="Package\Preparation SQL Task 4" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -42938,41 +42912,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{C226F970-31BE-4401-9E6F-05E7BA608C90\}]"
-          TopLeft="129.5,442.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61.6666666666667,62"
-              Start="0,0"
-              End="61.6666666666667,54.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.8316831683169" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.8316831683169"
-                    Point2="0,36.8316831683169"
-                    Point3="4,36.8316831683169" />
-                  <mssgle:LineSegment
-                    End="57.6666666666667,36.8316831683169" />
-                  <mssgle:CubicBezierSegment
-                    Point1="57.6666666666667,36.8316831683169"
-                    Point2="61.6666666666667,36.8316831683169"
-                    Point3="61.6666666666667,40.8316831683169" />
-                  <mssgle:LineSegment
-                    End="61.6666666666667,54.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{3D1C8C00-7957-4D22-A1F5-A152C7B7F7FF\}]"
+          Id="Package.PrecedenceConstraints[{68A3622E-AB0A-44F1-A060-B268597CB1CC\}]"
           TopLeft="724.833333333333,242.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43006,41 +42946,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{E264CABF-4DC3-4219-9F05-CB75FE641320\}]"
-          TopLeft="552.833333333333,500.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="111.333333333333,-258"
-              Start="0,0"
-              End="111.333333333333,-250.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-125.248874598071" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-125.248874598071"
-                    Point2="0,-129.248874598071"
-                    Point3="4,-129.248874598071" />
-                  <mssgle:LineSegment
-                    End="107.333333333333,-129.248874598071" />
-                  <mssgle:CubicBezierSegment
-                    Point1="107.333333333333,-129.248874598071"
-                    Point2="111.333333333333,-129.248874598071"
-                    Point3="111.333333333333,-133.248874598071" />
-                  <mssgle:LineSegment
-                    End="111.333333333333,-250.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{5CF49F78-E0FF-4BA2-BED7-107DEDD7213C\}]"
+          Id="Package.PrecedenceConstraints[{A5761320-A38D-4657-B632-287E8D7A47FF\}]"
           TopLeft="129.5,238.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43062,7 +42968,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{60DB5C0D-7912-4F40-A985-AFD0B44ABD27\}]"
+          Id="Package.PrecedenceConstraints[{56C597D6-BCD2-4872-8441-1E126452ED94\}]"
           TopLeft="415.5,441.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43096,7 +43002,29 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{AA90B0F6-9271-4905-BA76-6F6DE3960D8A\}]"
+          Id="Package.PrecedenceConstraints[{18C49BBE-5E65-4775-8F9C-D1184C661BAF\}]"
+          TopLeft="774.5,345.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{E0922252-7349-420A-9B36-ED5AA88E8EA8\}]"
           TopLeft="415.5,339.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43118,7 +43046,75 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{D162AB8D-1FAA-4727-9059-DBF44C44646E\}]"
+          Id="Package.PrecedenceConstraints[{62756EAE-6984-42EA-B528-8BCD6E15A81B\}]"
+          TopLeft="380.833333333333,245.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.6666666666667,52"
+              Start="0,0"
+              End="34.6666666666667,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0605427974948" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.0605427974948"
+                    Point2="0,21.0605427974948"
+                    Point3="4,21.0605427974948" />
+                  <mssgle:LineSegment
+                    End="30.6666666666667,21.0605427974948" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.6666666666667,21.0605427974948"
+                    Point2="34.6666666666667,21.0605427974948"
+                    Point3="34.6666666666667,25.0605427974948" />
+                  <mssgle:LineSegment
+                    End="34.6666666666667,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{525441ED-3936-4974-8FAA-EB5695B58CAA\}]"
+          TopLeft="129.5,442.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.6666666666667,62"
+              Start="0,0"
+              End="61.6666666666667,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.8316831683169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.8316831683169"
+                    Point2="0,36.8316831683169"
+                    Point3="4,36.8316831683169" />
+                  <mssgle:LineSegment
+                    End="57.6666666666667,36.8316831683169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.6666666666667,36.8316831683169"
+                    Point2="61.6666666666667,36.8316831683169"
+                    Point3="61.6666666666667,40.8316831683169" />
+                  <mssgle:LineSegment
+                    End="61.6666666666667,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{DBFE87BE-185A-4111-8F78-7E07AF013B69\}]"
           TopLeft="241.833333333333,504.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43152,29 +43148,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{FE9CE034-5219-4EBA-9559-45A52C00C622\}]"
-          TopLeft="774.5,447.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{E0E1C404-A9B8-4DF6-9E20-9199DE49552E\}]"
+          Id="Package.PrecedenceConstraints[{52B99CC5-2C0E-4E3C-8FD3-EBA307171E2E\}]"
           TopLeft="129.5,340.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43196,8 +43170,42 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{A2DC1503-6682-43F3-9A4E-C946575D666F\}]"
-          TopLeft="774.5,345.5">
+          Id="Package.PrecedenceConstraints[{950DB5F7-289A-4A01-88C7-BFF4902B48E7\}]"
+          TopLeft="552.833333333333,500.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111.333333333333,-258"
+              Start="0,0"
+              End="111.333333333333,-250.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-125.248874598071" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-125.248874598071"
+                    Point2="0,-129.248874598071"
+                    Point3="4,-129.248874598071" />
+                  <mssgle:LineSegment
+                    End="107.333333333333,-129.248874598071" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107.333333333333,-129.248874598071"
+                    Point2="111.333333333333,-129.248874598071"
+                    Point3="111.333333333333,-133.248874598071" />
+                  <mssgle:LineSegment
+                    End="111.333333333333,-250.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{911CDF21-43DC-4013-9FDC-3A1579A105D7\}]"
+          TopLeft="774.5,447.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -43209,40 +43217,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{AEBDAC17-9B15-4435-A141-9690C42DE54B\}]"
-          TopLeft="380.833333333333,245.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="34.6666666666667,52"
-              Start="0,0"
-              End="34.6666666666667,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.0605427974948" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.0605427974948"
-                    Point2="0,21.0605427974948"
-                    Point3="4,21.0605427974948" />
-                  <mssgle:LineSegment
-                    End="30.6666666666667,21.0605427974948" />
-                  <mssgle:CubicBezierSegment
-                    Point1="30.6666666666667,21.0605427974948"
-                    Point2="34.6666666666667,21.0605427974948"
-                    Point3="34.6666666666667,25.0605427974948" />
-                  <mssgle:LineSegment
-                    End="34.6666666666667,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
